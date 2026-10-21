@@ -57,6 +57,21 @@ The client bundle only receives `NEXT_PUBLIC_SITE_URL`. SMTP settings remain on 
 
 ## Docker
 
+The repository includes two Compose files:
+
+- `docker-compose.yml` runs locally and publishes only `127.0.0.1:3000`.
+- `docker-compose.dokploy.yml` joins the existing external `dokploy-network`, exposes port `3000` to Traefik, and publishes no host port.
+
+For a local Compose run:
+
+```bash
+NEXT_PUBLIC_SITE_URL=http://localhost:3000 docker compose up -d --build
+curl -f http://127.0.0.1:3000/api/health
+docker compose down
+```
+
+Compose reads a local `.env` file if present. Keep credentials there or in Dokploy's environment settings; `.env` is ignored by Git. The Dockerfile can also be used directly:
+
 ```bash
 docker build --build-arg NEXT_PUBLIC_SITE_URL=https://lsta.khulanode.com -t lsta-website .
 docker run --rm -p 3000:3000 --env-file .env.local lsta-website
@@ -67,11 +82,12 @@ The Dockerfile uses a standalone Next.js build, runs as an unprivileged user, an
 
 ## Dokploy deployment
 
-1. Create an Application in the existing Dokploy project and connect this Git repository and branch.
-2. Choose **Dockerfile** as the build method, with `Dockerfile` at the repository root and container port `3000`.
-3. In the application environment, set the variables above. Set `NEXT_PUBLIC_SITE_URL` to the final HTTPS origin before building. Dokploy must pass it as a build environment variable for the image build; if its Dockerfile workflow does not pass app environment variables into build, add `NEXT_PUBLIC_SITE_URL` as a build argument in Dokploy.
-4. Add the approved domain in Dokploy, route it to port `3000`, and enable its existing Traefik / Let's Encrypt HTTPS settings. No extra proxy or published host port is required.
-5. Deploy. Check `/api/health`, the homepage, `/news`, `/sitemap.xml`, and one real contact submission. Review Dokploy logs for the generic delivery result; they do not log enquiry details.
-6. On every news or image update, commit and redeploy. No writable content volume is needed because content is versioned in Git.
+1. Create a Compose service in the existing Dokploy project and connect this Git repository and branch. Select `docker-compose.dokploy.yml` as the Compose file.
+2. Configure `NEXT_PUBLIC_SITE_URL=https://lsta.khulanode.com` in Dokploy's Compose environment before building. Compose passes it as a Docker build argument and a runtime variable. Add SMTP variables there later; do not commit credentials.
+3. In Dokploy, attach the domain to the `website` service on container port `3000`, using its existing Traefik / Let's Encrypt HTTPS settings. The Compose file joins `dokploy-network` and has no published host port or separate reverse proxy.
+4. Deploy. Check `/api/health`, the homepage, `/news`, `/sitemap.xml`, and the contact page. Once SMTP is configured, verify one real contact submission. Review Dokploy logs for the generic delivery result; they do not log enquiry details.
+5. On every news or image update, commit and redeploy. No writable content volume is needed because content is versioned in Git.
+
+Dokploy's Dockerfile application workflow remains an alternative: use the root `Dockerfile`, pass `NEXT_PUBLIC_SITE_URL` as a build argument, and route the domain to container port `3000`.
 
 If SMTP is not configured, the contact page shows direct contact methods instead of an unusable form; the API also fails safely. Local in-memory rate limiting helps with simple abuse but is per application instance and resets on restart. For larger scale or sustained abuse, add a shared rate limiter at the edge.
