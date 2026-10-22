@@ -51,7 +51,7 @@ News lives in `src/content/news/*.md`. Copy an existing file, change its filenam
 | `SMTP_USER` | If SMTP needs auth | Username; pair with `SMTP_PASSWORD`. |
 | `SMTP_PASSWORD` | If SMTP needs auth | Password or app password. |
 | `SMTP_FROM` | For contact form | Sender address permitted by the SMTP server. |
-| `CONTACT_TO_EMAIL` | For contact form | Delivery mailbox; intended value is `info@limpoposcholartransportalliance.co.za`. |
+| `CONTACT_TO_EMAIL` | For contact form | Delivery mailbox; intended value is `info@lsta.org.za`. |
 
 The client bundle only receives `NEXT_PUBLIC_SITE_URL`. SMTP settings remain on the server. Runtime changes to `NEXT_PUBLIC_SITE_URL` require a rebuild because Next.js embeds public variables during build.
 

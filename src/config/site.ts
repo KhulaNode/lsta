@@ -5,7 +5,7 @@ export const site = {
   phoneDisplay: "072 239 4875",
   phoneHref: "tel:+27722394875",
   whatsappHref: "https://wa.me/27722394875?text=Hello%20LSTA%2C%20I%20would%20like%20to%20enquire%20about%20the%20alliance.",
-  email: "info@limpoposcholartransportalliance.co.za",
+  email: "info@lsta.org.za",
   location: "Limpopo, South Africa",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
 };

@@ -13,7 +13,7 @@ services:
       SMTP_USER: ${SMTP_USER:-}
       SMTP_PASSWORD: ${SMTP_PASSWORD:-}
       SMTP_FROM: ${SMTP_FROM:-}
-      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL:-info@limpoposcholartransportalliance.co.za}
+      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL:-info@lsta.org.za}
     ports:
       - "127.0.0.1:3000:3000"
     restart: unless-stopped

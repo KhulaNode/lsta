@@ -13,8 +13,10 @@ services:
       SMTP_USER: ${SMTP_USER:-}
       SMTP_PASSWORD: ${SMTP_PASSWORD:-}
       SMTP_FROM: ${SMTP_FROM:-}
-      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL:-info@limpoposcholartransportalliance.co.za}
+      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL:-info@lsta.org.za}
     expose:
+      - "3000"
+    ports:
       - "3000"
     networks:
       - dokploy-network
