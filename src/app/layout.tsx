@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/config/site";
 import "./globals.css";
+import "./news/news-images.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

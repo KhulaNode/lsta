@@ -1,0 +1,19 @@
+.news-card-image-poster {
+  background: var(--cream);
+}
+
+.news-card-image-poster img {
+  object-fit: contain;
+}
+
+.article-image-poster {
+  width: min(100%, 640px);
+  height: auto;
+  aspect-ratio: 2 / 3;
+  margin-inline: auto;
+  background: var(--cream);
+}
+
+.article-image-poster img {
+  object-fit: contain;
+}

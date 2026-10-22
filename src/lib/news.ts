@@ -9,6 +9,7 @@ export type Article = {
   category: string;
   image: string;
   imageAlt: string;
+  imagePresentation: "photo" | "poster";
   summary: string;
   body: string;
   demo: boolean;
@@ -30,9 +31,18 @@ export function getArticle(slug: string): Article | null {
     if (typeof data[field] !== "string" || !data[field].trim()) throw new Error(`Invalid ${field} in article ${slug}`);
   }
   if (data.slug !== slug || !/^\d{4}-\d{2}-\d{2}$/.test(data.date) || !data.image.startsWith("/images/")) throw new Error(`Invalid metadata in article ${slug}`);
-  return { slug, title: data.title, date: data.date, category: data.category, image: data.image, imageAlt: data.imageAlt, summary: data.summary, body: match[2], demo: data.demo === true };
+  return { slug, title: data.title, date: data.date, category: data.category, image: data.image, imageAlt: data.imageAlt, imagePresentation: data.imagePresentation === "poster" ? "poster" : "photo", summary: data.summary, body: match[2], demo: data.demo !== false };
 }
 
 export function getArticles(): Article[] {
   return fs.readdirSync(contentDir).filter(file => file.endsWith(".md")).map(file => getArticle(file.slice(0, -3))).filter((article): article is Article => article !== null).sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function getPublishedArticle(slug: string): Article | null {
+  const article = getArticle(slug);
+  return article && !article.demo ? article : null;
+}
+
+export function getPublishedArticles(): Article[] {
+  return getArticles().filter(article => !article.demo);
 }
