@@ -7,7 +7,6 @@ Next.js App Router website for LSTA. The pages, images and news live in the repo
 The website is built as a launch candidate. The public hostname is `https://lsta.org.za`. Deployment has not been performed from this repository because Dokploy application access and final approval of the remaining news and safety content have not been supplied. These items need client input before public launch:
 
 - Replace the remaining draft article, "An information hub for local operators," with approved content. It is hidden from public news pages and the sitemap.
-- Supply verified Facebook and TikTok profile URLs if social links are wanted. Unverified links are omitted.
 - Configure SMTP delivery after the setup fee is paid. Until SMTP is configured, the form is hidden and the phone, email and WhatsApp links remain available. The API also fails safely if a submission is attempted directly.
 - Confirm any safety or regulatory copy against current authoritative sources before publication.
 

@@ -18,3 +18,8 @@ export const navigation = [
   { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
 ];
+
+export const socialLinks = [
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61589336548603" },
+  { label: "TikTok", href: "https://www.tiktok.com/@limpoposcholartransport" },
+];

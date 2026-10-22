@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Mail, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { navigation, site } from "@/config/site";
+import { SocialLinks } from "@/components/social-links";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -13,7 +14,7 @@ export function SiteHeader() {
   return <>
     <div className="topbar"><div className="container topbar-inner">
       <div className="topbar-contacts"><a href={site.phoneHref}><Phone size={12} aria-hidden="true" /> {site.phoneDisplay}</a><a href={`mailto:${site.email}`}><Mail size={12} aria-hidden="true" /> {site.email}</a></div>
-      <span className="topbar-note">Safe journeys. Brighter futures.</span>
+      <nav aria-label="LSTA social media"><SocialLinks className="social-links-topbar" /></nav>
     </div></div>
     <header className="site-header"><div className="container nav-inner">
       <Link href="/" className="brand" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
@@ -24,7 +25,7 @@ export function SiteHeader() {
       <Link className="button button-small nav-cta" href="/membership">Join / Enquire <span aria-hidden="true">→</span></Link>
       <button className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     </div>
-    {open && <nav id="mobile-menu" className="mobile-nav" aria-label="Mobile navigation">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}>{item.label}</Link>)}<Link className="button" href="/membership" onClick={() => setOpen(false)}>Join / Enquire →</Link></nav>}
+    {open && <nav id="mobile-menu" className="mobile-nav" aria-label="Mobile navigation">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}>{item.label}</Link>)}<SocialLinks className="social-links-mobile" /><Link className="button" href="/membership" onClick={() => setOpen(false)}>Join / Enquire →</Link></nav>}
     </header>
   </>;
 }
