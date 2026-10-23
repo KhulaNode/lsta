@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
+import { executiveGroups } from "@/content/leadership";
 import { pageMetadata } from "@/lib/metadata";
 import "./about.css";
 
 export const metadata = pageMetadata(
   "About LSTA",
-  "Learn about the Limpopo Scholar Transport Alliance, its vision, mission, values and commitment to scholar transport in Limpopo.",
+  "Learn about the Limpopo Scholar Transport Alliance, its executive committee, vision, mission, values and commitment to scholar transport in Limpopo.",
   "/about",
 );
 
@@ -48,6 +49,7 @@ export default function AboutPage() {
           <p>LSTA is committed to promoting safe, reliable, lawful, and professional scholar transportation while advocating for the interests of operators and supporting their efforts to comply with applicable transport legislation and operating requirements.</p>
           <p>Through collaboration, advocacy, stakeholder engagement, and capacity-building initiatives, the Alliance seeks to improve the scholar transport sector, protect the interests of learners, and contribute to safer and more accessible transportation for children travelling to and from educational institutions.</p>
           <p>Our commitment is to build a united, accountable, and sustainable scholar transport industry that prioritises learner safety, operational compliance, and the development of local transport operators.</p>
+          <Link className="button button-outline about-committee-jump" href="#executive-committee">Meet the Executive Committee ↓</Link>
         </div>
       </section>
 
@@ -85,6 +87,29 @@ export default function AboutPage() {
           <ul className="about-values">
             {values.map((value) => <li key={value}>{value}</li>)}
           </ul>
+        </div>
+      </section>
+
+      <section className="section about-committee" id="executive-committee" aria-labelledby="committee-heading">
+        <div className="container">
+          <span className="eyebrow">The people behind the alliance</span>
+          <h2 id="committee-heading">EXECUTIVE COMMITTEE</h2>
+          <p className="about-committee-intro">The committee brings together LSTA’s office bearers, finance team, communications team, safety officers and additional members.</p>
+          <div className="committee-groups">
+            {executiveGroups.map((group) => (
+              <section className="committee-group" key={group.id} aria-labelledby={`${group.id}-heading`}>
+                <h3 id={`${group.id}-heading`}>{group.title}</h3>
+                <ul className="committee-grid">
+                  {group.members.map((member) => (
+                    <li className="committee-card" key={member.id}>
+                      <span className="committee-role">{member.role}</span>
+                      <strong>{member.name}</strong>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
         </div>
       </section>
 
