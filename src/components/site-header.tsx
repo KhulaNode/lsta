@@ -22,10 +22,10 @@ export function SiteHeader() {
         <span className="brand-copy"><strong>LIMPOPO SCHOLAR</strong><span>TRANSPORT ALLIANCE</span></span>
       </Link>
       <nav className="desktop-nav" aria-label="Main navigation">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}</nav>
-      <Link className="button button-small nav-cta" href="/membership">Join / Enquire <span aria-hidden="true">→</span></Link>
+      <Link className="button button-small nav-cta" href="/member-network#join">Join / Enquire <span aria-hidden="true">→</span></Link>
       <button className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     </div>
-    {open && <nav id="mobile-menu" className="mobile-nav" aria-label="Mobile navigation">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}>{item.label}</Link>)}<SocialLinks className="social-links-mobile" /><Link className="button" href="/membership" onClick={() => setOpen(false)}>Join / Enquire →</Link></nav>}
+    {open && <nav id="mobile-menu" className="mobile-nav" aria-label="Mobile navigation">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)}>{item.label}</Link>)}<SocialLinks className="social-links-mobile" /><Link className="button" href="/member-network#join" onClick={() => setOpen(false)}>Join / Enquire →</Link></nav>}
     </header>
   </>;
 }

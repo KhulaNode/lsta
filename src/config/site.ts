@@ -13,7 +13,7 @@ export const site = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/membership", label: "Membership" },
+  { href: "/member-network", label: "Member Network" },
   { href: "/safety-compliance", label: "Safety & Compliance" },
   { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },

@@ -7,7 +7,7 @@ LSTA brings together scholar transport associations and operators across Limpopo
 ## Explore the website
 
 - [About LSTA](https://lsta.org.za/about) — the alliance's vision, mission, values and commitment.
-- [Membership](https://lsta.org.za/membership) — learn about joining the alliance.
+- [Member Network](https://lsta.org.za/member-network) — learn about joining and explore member organizations.
 - [Safety & Compliance](https://lsta.org.za/safety-compliance) — general safety information and links to official guidance.
 - [News & Updates](https://lsta.org.za/news) — articles and announcements.
 - [Contact](https://lsta.org.za/contact) — get in touch with LSTA.

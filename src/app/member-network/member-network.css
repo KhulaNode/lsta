@@ -1,0 +1,63 @@
+.member-network-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+#join, #directory { scroll-margin-top: 105px; }
+
+.affiliate-section { background: var(--cream); }
+.affiliate-intro { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 44px; }
+.affiliate-intro > div { max-width: 720px; }
+.affiliate-intro h2 { margin-bottom: 14px; }
+.affiliate-intro p { margin: 0; font-size: 16px; }
+.affiliate-intro .button { flex-shrink: 0; }
+
+.affiliate-map-section { scroll-margin-top: 105px; }
+.affiliate-map-heading, .affiliate-list-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+.affiliate-map-heading h2, .affiliate-list-heading h2 { margin: 0; }
+.affiliate-map-heading .eyebrow, .affiliate-list-heading .eyebrow { margin-bottom: 9px; }
+.affiliate-map-frame { position: relative; overflow: hidden; border: 1px solid #d8c7ad; border-radius: 8px; box-shadow: 0 16px 36px #3b2d1b1a; }
+.affiliate-map { width: 100%; height: clamp(420px, 53vw, 650px); background: #e9e1d1; z-index: 0; }
+.affiliate-map .leaflet-control-zoom { border: 0; box-shadow: 0 3px 14px #25190738; }
+.affiliate-map .leaflet-control-zoom a { width: 38px; height: 38px; line-height: 38px; color: #593a20; }
+.affiliate-map .leaflet-control-attribution { font-size: 10px; }
+.affiliate-leaflet-marker { border: 0; background: transparent; }
+.affiliate-leaflet-marker span { display: block; width: 32px; height: 32px; border: 3px solid #fff; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #a56c3a; box-shadow: 0 3px 12px #2b1c0a80; }
+.affiliate-leaflet-marker span::after { content: ""; display: block; width: 9px; height: 9px; margin: 8px; border-radius: 50%; background: #fff; }
+.affiliate-leaflet-marker-group span { position: relative; background: #71431f; }
+.affiliate-leaflet-marker-group span::after { display: none; }
+.affiliate-leaflet-marker-group b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transform: rotate(45deg); color: #fff; font-size: 13px; font-weight: 900; }
+.affiliate-map .leaflet-popup-content-wrapper { border-radius: 7px; box-shadow: 0 8px 25px #2b1c0a55; }
+.affiliate-map .leaflet-popup-content { margin: 0; }
+.affiliate-leaflet-popup { display: flex; flex-direction: column; gap: 8px; min-width: 190px; max-width: 280px; max-height: 320px; overflow-y: auto; padding: 20px; font-family: Arial, Helvetica, sans-serif; }
+.affiliate-popup-label { color: var(--bronze-dark); font-size: 10px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+.affiliate-popup-member { display: flex; flex-direction: column; gap: 7px; }
+.affiliate-popup-member + .affiliate-popup-member { padding-top: 12px; border-top: 1px solid #e7dcc9; }
+.affiliate-leaflet-popup strong { color: var(--ink); font-size: 17px; line-height: 1.25; overflow-wrap: anywhere; }
+.affiliate-leaflet-popup span:not(.affiliate-popup-label) { color: var(--muted); font-size: 13px; }
+.affiliate-leaflet-popup a { color: var(--bronze-dark); font-size: 14px; font-weight: 800; }
+.affiliate-leaflet-popup a:hover { text-decoration: underline; }
+.affiliate-map-credit { margin: 11px 0 0; color: #6b6358; font-size: 11px; line-height: 1.5; }
+.affiliate-map-credit a { text-decoration: underline; }
+
+.affiliate-list-heading { margin: 72px 0 12px; }
+.affiliate-search { display: flex; align-items: center; gap: 12px; width: min(100%, 440px); min-height: 52px; padding: 0 16px; background: #fff; border: 1px solid #d8d1c8; border-radius: 5px; color: var(--bronze-dark); }
+.affiliate-search:focus-within { border-color: var(--bronze); box-shadow: 0 0 0 3px #bc7f5033; }
+.affiliate-search input { width: 100%; height: 50px; border: 0; outline: 0; background: transparent; color: var(--ink); }
+.affiliate-search input::placeholder { color: #77716a; }
+.affiliate-result-count { margin: 0 0 26px; color: var(--muted); font-size: 13px; font-weight: 800; }
+.affiliate-group + .affiliate-group { margin-top: 45px; }
+.affiliate-group-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid #d9d0c5; }
+.affiliate-group-heading h3 { margin: 0; font-size: 25px; letter-spacing: -.03em; }
+.affiliate-group-heading span { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.affiliate-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0; }
+.affiliate-card { min-width: 0; min-height: 215px; display: flex; flex-direction: column; align-items: flex-start; padding: 25px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--bronze); border-radius: 5px; box-shadow: 0 4px 20px #3926140a; }
+.affiliate-card h4 { margin: 0 0 17px; font-size: 19px; line-height: 1.25; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.affiliate-card .affiliate-location { display: inline-flex; align-items: flex-start; gap: 7px; margin: 0; font-size: 13px; color: var(--muted); }
+.affiliate-location svg, .affiliate-phone svg { flex-shrink: 0; }
+.affiliate-phone { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; color: var(--bronze-dark); font-size: 15px; font-weight: 800; }
+.affiliate-phone:hover { text-decoration: underline; }
+.affiliate-show-map { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding: 17px 0 0; border: 0; background: none; color: var(--bronze-dark); font-size: 13px; font-weight: 900; }
+.affiliate-show-map:hover:not(:disabled) { text-decoration: underline; }
+.affiliate-show-map:disabled { color: #8b8580; cursor: default; }
+.affiliate-empty { padding: 45px 25px; text-align: center; background: #fff; border: 1px solid var(--line); border-radius: 5px; }
+.affiliate-empty h3 { margin: 0 0 8px; font-size: 23px; }
+.affiliate-empty p { margin: 0; }
+@media (max-width: 950px) { .affiliate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .affiliate-intro, .affiliate-list-heading { align-items: flex-start; flex-direction: column; } .affiliate-map-heading { align-items: flex-start; flex-direction: column; gap: 4px; } .affiliate-map { height: 440px; } .affiliate-search { width: 100%; } .affiliate-grid { grid-template-columns: 1fr; } .affiliate-card { min-height: 190px; } }
