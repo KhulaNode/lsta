@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = pageMetadata(
   "Media Centre",
-  "Read LSTA articles, explore independent media coverage and find upcoming events.",
+  "Read LSTA articles and announcements, explore independent media coverage and find upcoming events.",
   "/media-centre",
 );
 
@@ -47,10 +47,10 @@ export default function MediaCentrePage() {
 
   return (
     <>
-      <PageHero title="Media Centre" subtitle="Articles, coverage and events from the LSTA community." />
+      <PageHero title="Media Centre" subtitle="Articles, announcements, coverage and events from the LSTA community." />
       <nav className="media-section-nav" aria-label="Media Centre sections">
         <div className="container">
-          <a href="#articles">Articles</a>
+          <a href="#articles">Articles and Announcements</a>
           <a href="#coverage">Media &amp; news coverage</a>
           <a href="#events">Events</a>
         </div>
@@ -58,8 +58,8 @@ export default function MediaCentrePage() {
 
       <section className="section section-cream media-section" id="articles" aria-labelledby="articles-heading">
         <div className="container">
-          <div className="section-heading-row"><div><span className="eyebrow">From the alliance</span><h2 id="articles-heading">ARTICLES</h2><p>Updates and information published by LSTA.</p></div></div>
-          {articles.length ? <div className="news-grid">{articles.map(article => <NewsCard key={article.slug} article={article} />)}</div> : <p>No articles have been published yet.</p>}
+          <div className="section-heading-row"><div><span className="eyebrow">From the alliance</span><h2 id="articles-heading">ARTICLES AND ANNOUNCEMENTS</h2><p>Articles and announcements published by LSTA.</p></div></div>
+          {articles.length ? <div className="news-grid">{articles.map(article => <NewsCard key={article.slug} article={article} />)}</div> : <p>No articles or announcements have been published yet.</p>}
         </div>
       </section>
 

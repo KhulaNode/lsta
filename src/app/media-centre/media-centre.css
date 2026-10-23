@@ -33,4 +33,4 @@
 .events-subheading h3{margin:0;color:var(--ink);font-size:24px;letter-spacing:-.035em}
 .events-past-heading{margin-top:54px}
 @media(max-width:1000px){.coverage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){.coverage-grid,.coverage-video-grid{grid-template-columns:1fr}.coverage-card-body,.coverage-card-video .coverage-card-body{padding:22px}.media-section-nav{top:68px}.media-section-nav .container{gap:22px;min-height:54px}.media-section-nav a{min-height:54px;font-size:12px}.media-section{scroll-margin-top:125px}.events-past-heading{margin-top:42px}}
+@media(max-width:700px){.coverage-grid,.coverage-video-grid{grid-template-columns:1fr}.coverage-card-body,.coverage-card-video .coverage-card-body{padding:22px}.media-section-nav{top:68px}.media-section-nav .container{gap:12px;min-height:54px}.media-section-nav a{min-height:54px;font-size:11px}.media-section{scroll-margin-top:125px}.events-past-heading{margin-top:42px}}
