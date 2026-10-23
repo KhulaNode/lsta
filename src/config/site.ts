@@ -15,7 +15,7 @@ export const navigation = [
   { href: "/about", label: "About" },
   { href: "/member-network", label: "Member Network" },
   { href: "/safety-compliance", label: "Safety & Compliance" },
-  { href: "/news", label: "News" },
+  { href: "/media-centre", label: "Media Centre" },
   { href: "/contact", label: "Contact" },
 ];
 
