@@ -14,7 +14,7 @@ export const publishAffiliateContacts = true;
 
 export const affiliates: Affiliate[] = [
   { id: "mokomene-scholar", name: "Mokomene Scholar", phone: "082 294 4420", district: "Capricorn", municipality: "Molemole", location: "Mokomene", coordinates: { latitude: -23.464, longitude: 29.82 } },
-  { id: "dikgale-solomondale", name: "DIKGALE & SOLOMONDALE SCHOLAR TRANSPORT", phone: "072 440 2705", district: "Capricorn", municipality: "Polokwane", location: "Solomondale", coordinates: { latitude: -23.7659, longitude: 29.7004 } },
+  { id: "dikgale-scholar", name: "DIKGALE SCHOLAR TRANSPORT", phone: "072 440 2705", district: "Capricorn", municipality: "Polokwane", location: "Dikgale", coordinates: { latitude: -23.74787, longitude: 29.78331 } },
   { id: "polokwane-ngatatee", name: "POLOKWANE NGATATEE", phone: "067 311 9252", district: "Capricorn", municipality: "Polokwane", location: "Polokwane", coordinates: { latitude: -23.9112, longitude: 29.4618 } },
   { id: "mphahlele", name: "MPHAHLELE TRANSPORT ORGANIZATION", phone: "079 679 8337", district: "Capricorn", municipality: "Lepelle-Nkumpi", location: "Mphahlele", coordinates: { latitude: -24.313, longitude: 29.6382 } },
   { id: "moletjie-r521", name: "MOLETJIE R521 SCHOLAR TRANSPORT", phone: "064 659 7971", district: "Capricorn", municipality: "Polokwane", location: "Moletjie Traditional Authority", coordinates: { latitude: -23.73168, longitude: 29.303266 } },
