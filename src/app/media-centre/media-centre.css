@@ -18,6 +18,14 @@
 .coverage-video-preview:hover .coverage-play-icon{transform:scale(1.08);background:var(--bronze-dark)}
 .coverage-play-icon svg{margin-left:3px}
 .coverage-play-label{position:absolute;bottom:17px;font-size:13px;font-weight:900;text-shadow:0 1px 5px #000}
+.coverage-video-open{position:absolute;z-index:2;top:10px;right:10px;display:inline-flex;align-items:center;gap:3px;max-width:calc(100% - 20px);padding:8px 10px;border-radius:4px;background:#171717ed;color:#fff;font-size:11px;font-weight:800}
+.coverage-video-open:hover,.coverage-video-fallback-content a:hover{background:var(--bronze-dark)}
+.coverage-video-fallback{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;color:#fff}
+.coverage-video-fallback img{object-fit:cover}
+.coverage-video-fallback::after{content:"";position:absolute;inset:0;background:#000a}
+.coverage-video-fallback-content{position:relative;z-index:1;display:grid;justify-items:center;gap:16px;padding:20px;text-align:center}
+.coverage-video-fallback-content p{margin:0;color:#fff;font-size:15px;font-weight:800;line-height:1.4}
+.coverage-video-fallback-content a{display:inline-flex;align-items:center;gap:5px;padding:11px 15px;border-radius:4px;background:var(--bronze);color:#fff;font-size:13px;font-weight:900}
 .coverage-card-video .coverage-card-body{padding:24px 26px 26px}
 .coverage-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #39261418}
 .coverage-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:22px}
