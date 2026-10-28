@@ -3,6 +3,10 @@
 .media-section-nav .container{display:flex;align-items:center;gap:30px;min-height:62px;overflow-x:auto;white-space:nowrap}
 .media-section-nav a{display:inline-flex;align-items:center;min-height:62px;border-bottom:3px solid transparent;color:#3b352f;font-size:13px;font-weight:800}
 .media-section-nav a:hover,.media-section-nav a:focus-visible{color:var(--bronze-dark);border-bottom-color:var(--bronze)}
+.media-gallery-preview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.media-gallery-preview a{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:7px;background:#eee}
+.media-gallery-preview img{object-fit:cover;transition:transform .25s}
+.media-gallery-preview a:hover img{transform:scale(1.04)}
 .coverage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .coverage-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-bottom:22px}
 .coverage-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 5px 25px #3926140a;transition:transform .2s,box-shadow .2s}
@@ -41,4 +45,4 @@
 .events-subheading h3{margin:0;color:var(--ink);font-size:24px;letter-spacing:-.035em}
 .events-past-heading{margin-top:54px}
 @media(max-width:1000px){.coverage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){.coverage-grid,.coverage-video-grid{grid-template-columns:1fr}.coverage-card-body,.coverage-card-video .coverage-card-body{padding:22px}.media-section-nav{top:68px}.media-section-nav .container{gap:12px;min-height:54px}.media-section-nav a{min-height:54px;font-size:11px}.media-section{scroll-margin-top:125px}.events-past-heading{margin-top:42px}}
+@media(max-width:700px){.coverage-grid,.coverage-video-grid{grid-template-columns:1fr}.coverage-card-body,.coverage-card-video .coverage-card-body{padding:22px}.media-section-nav{top:68px}.media-section-nav .container{gap:12px;min-height:54px}.media-section-nav a{min-height:54px;font-size:11px}.media-section{scroll-margin-top:125px}.events-past-heading{margin-top:42px}.media-gallery-preview{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.media-gallery-preview a:last-child{display:none}}

@@ -1,0 +1,24 @@
+.gallery-section .gallery-heading{margin-top:36px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.gallery-card{margin:0;min-width:0;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:7px;box-shadow:0 4px 20px #3926140a}
+.gallery-image-button,.gallery-video{position:relative;display:block;width:100%;aspect-ratio:4/3;background:#211c18}
+.gallery-image-button{padding:0;border:0;overflow:hidden;color:#fff;text-align:left}
+.gallery-image-button img{object-fit:cover;transition:transform .25s}
+.gallery-image-button:hover img{transform:scale(1.04)}
+.gallery-expand{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:7px;padding:9px 11px;border-radius:4px;background:#171717e8;color:#fff;font-size:12px;font-weight:800}
+.gallery-video{object-fit:contain}
+.gallery-card figcaption{display:grid;gap:7px;padding:18px 20px 20px}
+.gallery-card figcaption strong{font-size:17px;letter-spacing:-.02em}
+.gallery-card figcaption span{color:#625e58;font-size:13px;line-height:1.5}
+.gallery-card figcaption .gallery-related-link{display:inline-flex;align-items:center;gap:4px;width:max-content;max-width:100%;margin-top:4px;color:var(--bronze-dark);font-size:12px;font-weight:900}
+.gallery-related-link:hover{text-decoration:underline}
+.gallery-dialog{width:min(96vw,1200px);max-width:none;max-height:96vh;margin:auto;padding:0;border:0;border-radius:7px;background:#171717;color:#fff;overflow:hidden}
+.gallery-dialog::backdrop{background:#080808e8}
+.gallery-dialog-content{position:relative;display:flex;flex-direction:column;padding:46px 15px 12px}
+.gallery-dialog-image{position:relative;width:min(90vw,1160px);height:min(79vh,780px);background:#171717}
+.gallery-dialog-image img{object-fit:contain}
+.gallery-dialog-content p{margin:10px 5px 0;color:#fff;font-size:14px;text-align:center}
+.gallery-dialog-close{position:absolute;z-index:1;right:10px;top:8px;display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:4px;background:#fff2;color:#fff}
+.gallery-dialog-close:hover{background:var(--bronze-dark)}
+@media(max-width:1000px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.gallery-grid{grid-template-columns:1fr}.gallery-dialog-content{padding:48px 8px 10px}.gallery-dialog-image{width:calc(96vw - 16px);height:min(72vh,700px)}}

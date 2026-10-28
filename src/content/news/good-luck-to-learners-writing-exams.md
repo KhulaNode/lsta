@@ -2,9 +2,9 @@
 slug: good-luck-to-learners-writing-exams
 title: "Good luck to all learners writing their exams"
 date: "2026-10-13"
-category: "LSTA message"
-image: "/images/exam_goodluck_2026.jpg"
-imageAlt: "LSTA exam good luck poster wishing all learners focus, confidence and success"
+category: "Announcement"
+image: "/images/announcement posters/exam_goodluck_2026.jpg"
+imageAlt: "LSTA exam good luck announcement wishing all learners focus, confidence and success"
 imagePresentation: "poster"
 summary: "LSTA wishes every learner focus, confidence and success as they write their exams."
 demo: false

@@ -17,3 +17,19 @@
 .article-image-poster img {
   object-fit: contain;
 }
+
+.article-header .article-contact-note {
+  margin-top: 22px;
+  padding: 14px 17px;
+  border-left: 4px solid var(--bronze);
+  background: #f6eee5;
+  color: #3d3024;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.article-contact-note a {
+  color: var(--bronze-dark);
+  font-weight: 800;
+  text-decoration: underline;
+}

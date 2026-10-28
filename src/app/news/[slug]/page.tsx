@@ -13,11 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getPublishedArticle(slug);
   if (!article) return {};
-  return { ...pageMetadata(article.title, article.summary, `/news/${slug}`), openGraph: { title: article.title, description: article.summary, type: "article", publishedTime: `${article.date}T12:00:00Z`, images: [{ url: article.image, alt: article.imageAlt }] } };
+  return { ...pageMetadata(article.title, article.summary, `/news/${slug}`), openGraph: { title: article.title, description: article.summary, type: "article", ...(article.category !== "Announcement" && article.date ? { publishedTime: `${article.date}T12:00:00Z` } : {}), images: [{ url: article.image, alt: article.imageAlt }] } };
 }
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = getPublishedArticle(slug);
   if (!article) notFound();
-  return <article className="container"><div className="article-layout"><header className="article-header"><Link href="/media-centre#articles" className="text-link">← All articles</Link><div style={{marginTop:25}} className="article-meta">{new Intl.DateTimeFormat("en-ZA", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${article.date}T12:00:00Z`))} · {article.category}</div><h1>{article.title}</h1><p>{article.summary}</p></header><div className={`article-image${article.imagePresentation === "poster" ? " article-image-poster" : ""}`}><Image src={article.image} alt={article.imageAlt} fill priority sizes="(max-width: 800px) 100vw, 800px" /></div><div className="article-body"><ReactMarkdown remarkPlugins={[remarkGfm]}>{article.body}</ReactMarkdown></div></div></article>;
+  const isAnnouncement = article.category === "Announcement";
+  return <article className="container"><div className="article-layout"><header className="article-header"><Link href={isAnnouncement ? "/media-centre#announcements" : "/media-centre#articles"} className="text-link">← {isAnnouncement ? "All announcements" : "All articles"}</Link><div style={{marginTop:25}} className="article-meta">{!isAnnouncement && article.date ? `${new Intl.DateTimeFormat("en-ZA", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${article.date}T12:00:00Z`))} · ` : ""}{article.category}</div><h1>{article.title}</h1><p>{article.summary}</p>{article.contactNote && <p className="article-contact-note">{article.contactNote} <a href="mailto:info@lsta.org.za">info@lsta.org.za</a>.</p>}</header><div className={`article-image${article.imagePresentation === "poster" ? " article-image-poster" : ""}`}><Image src={article.image} alt={article.imageAlt} fill priority sizes="(max-width: 800px) 100vw, 800px" /></div><div className="article-body"><ReactMarkdown remarkPlugins={[remarkGfm]}>{article.body}</ReactMarkdown></div></div></article>;
 }
