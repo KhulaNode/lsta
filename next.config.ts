@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { getUmamiConfig } from "./src/config/umami";
+
+const umamiOrigin = getUmamiConfig()?.origin;
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -18,7 +21,7 @@ const nextConfig: NextConfig = {
         { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         { key: "X-Frame-Options", value: "DENY" },
         { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-        { key: "Content-Security-Policy", value: "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; img-src 'self' data: https://tile.openstreetmap.org; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'" }
+        { key: "Content-Security-Policy", value: `default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; img-src 'self' data: https://tile.openstreetmap.org; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'${umamiOrigin ? ` ${umamiOrigin}` : ""}; connect-src 'self'${umamiOrigin ? ` ${umamiOrigin}` : ""}` }
       ]
     }];
   }
