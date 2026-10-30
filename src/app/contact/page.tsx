@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { site } from "@/config/site";
 import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = pageMetadata("Contact", "Contact Limpopo Scholar Transport Alliance by phone, email, WhatsApp or enquiry form.", "/contact");
+export const metadata = pageMetadata("Contact", "Contact LSTA in Limpopo by phone, email or WhatsApp with questions about membership, the alliance or scholar transport.", "/contact");
 
 export default async function ContactPage({ searchParams }: { searchParams: Promise<{ topic?: string }> }) {
   const params = await searchParams;

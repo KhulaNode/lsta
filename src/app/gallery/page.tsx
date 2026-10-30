@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { pageMetadata } from "@/lib/metadata";
 import "./gallery.css";
 
-export const metadata = pageMetadata("Gallery", "Photographs and videos from the LSTA community.", "/gallery");
+export const metadata = pageMetadata("Photo & Video Gallery", "Browse photos and videos of LSTA meetings, public inquiries and scholar transport stakeholder activities in Limpopo.", "/gallery");
 
 export default function GalleryPage() {
   return <>

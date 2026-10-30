@@ -10,7 +10,7 @@ import "./member-network.css";
 
 export const metadata = pageMetadata(
   "Member Network",
-  "Learn about joining LSTA and explore its member scholar transport organizations across Limpopo.",
+  "Browse LSTA member scholar transport organizations by area on a Limpopo map and learn how to enquire about joining the alliance.",
   "/member-network",
 );
 

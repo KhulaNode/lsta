@@ -9,7 +9,14 @@ import { SocialLinks } from "@/components/social-links";
 import { formatEventDateTime, getEventLists } from "@/lib/events";
 import "./home-event.css";
 
-export const metadata = pageMetadata("Home", "LSTA supports scholar transport operators and safer journeys for learners across Limpopo.", "/");
+export const metadata = {
+  ...pageMetadata(
+    "Safer School Journeys",
+    "LSTA unites scholar transport associations across Limpopo, supports local operators and promotes safer, reliable journeys for learners.",
+    "/",
+  ),
+  title: { absolute: "Limpopo Scholar Transport Alliance | Safer School Journeys" },
+};
 export const dynamic = "force-dynamic";
 
 const pillars = [
@@ -25,7 +32,7 @@ export default function Home() {
   const eventDate = featuredEvent ? new Date(featuredEvent.startsAt) : null;
   const datePart = (part: "day" | "month" | "year") => eventDate ? new Intl.DateTimeFormat("en-ZA", { [part]: part === "month" ? "short" : "numeric", timeZone: "Africa/Johannesburg" }).format(eventDate) : "";
   return <>
-    <section className="hero"><Image className="hero-image" src="/images/hero-transport.png" alt="Two scholar transport minibuses on a road in Limpopo at sunrise" fill priority sizes="100vw" /><div className="hero-overlay" /><div className="container hero-content"><div className="hero-copy"><span className="eyebrow">For operators, families and schools</span><h1>SAFE JOURNEYS.<span>BRIGHTER FUTURES.</span></h1><p>Limpopo Scholar Transport Alliance represents and supports scholar transport operators in Limpopo, working toward safer, more reliable journeys for learners.</p><div className="hero-actions"><Link className="button" href="/member-network#join"><UsersRound size={17} /> Join the Alliance</Link><Link className="button button-outline" href="/contact"><Phone size={17} /> Contact Us</Link></div></div></div></section>
+    <section className="hero"><Image className="hero-image" src="/images/hero-transport.png" alt="Two scholar transport minibuses on a road in Limpopo at sunrise" fill priority sizes="100vw" /><div className="hero-overlay" /><div className="container hero-content"><div className="hero-copy"><span className="eyebrow">Scholar transport across Limpopo</span><h1>SAFE JOURNEYS.<span>BRIGHTER FUTURES.</span></h1><p>Limpopo Scholar Transport Alliance represents and supports scholar transport operators in Limpopo, working toward safer, more reliable journeys for learners.</p><div className="hero-actions"><Link className="button" href="/member-network#join"><UsersRound size={17} /> Join the Alliance</Link><Link className="button button-outline" href="/contact"><Phone size={17} /> Contact Us</Link></div></div></div></section>
     <section className="pillars" aria-label="Our priorities"><div className="container pillar-grid">{pillars.map(({ icon: Icon, title, description }) => <div className="pillar" key={title}><Icon aria-hidden="true" /><h2>{title}</h2><p>{description}</p></div>)}</div></section>
     {featuredEvent && <section className="home-event" aria-labelledby="home-event-heading"><div className="container home-event-inner">
       <div className="home-event-date" aria-hidden="true"><span>{datePart("month")}</span><strong>{datePart("day")}</strong><span>{datePart("year")}</span></div>

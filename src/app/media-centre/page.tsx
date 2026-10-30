@@ -17,7 +17,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = pageMetadata(
   "Media Centre",
-  "Find LSTA events, media and news coverage, announcements, articles and gallery media.",
+  "Find LSTA events, announcements, articles, gallery photos and videos, and independent news coverage of scholar transport in Limpopo.",
   "/media-centre",
 );
 

@@ -1,6 +1,7 @@
 ---
 slug: operator-information-hub
 title: "Building a Stronger Scholar Transport Community in Limpopo"
+seoTitle: "Scholar Transport Community in Limpopo | LSTA"
 date: "2026-10-02"
 category: "Alliance News & Updates"
 image: "/images/safety-inspection.png"

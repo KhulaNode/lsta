@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPublishedArticle, getPublishedArticles } from "@/lib/news";
 import { pageMetadata } from "@/lib/metadata";
+import { site } from "@/config/site";
 
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() { return getPublishedArticles().map(article => ({ slug: article.slug })); }
@@ -13,7 +14,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getPublishedArticle(slug);
   if (!article) return {};
-  return { ...pageMetadata(article.title, article.summary, `/news/${slug}`), openGraph: { title: article.title, description: article.summary, type: "article", ...(article.category !== "Announcement" && article.date ? { publishedTime: `${article.date}T12:00:00Z` } : {}), images: [{ url: article.image, alt: article.imageAlt }] } };
+  return {
+    ...pageMetadata(article.title, article.summary, `/news/${slug}`),
+    ...(article.seoTitle ? { title: { absolute: article.seoTitle } } : {}),
+    openGraph: {
+      title: article.title,
+      description: article.summary,
+      url: `${site.url}/news/${slug}`,
+      siteName: site.name,
+      type: "article",
+      ...(article.category !== "Announcement" && article.date ? { publishedTime: `${article.date}T12:00:00Z` } : {}),
+      images: [{ url: article.image, alt: article.imageAlt }],
+    },
+    twitter: { card: "summary_large_image", title: article.title, description: article.summary, images: [{ url: article.image, alt: article.imageAlt }] },
+  };
 }
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
