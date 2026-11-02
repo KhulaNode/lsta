@@ -9,9 +9,42 @@ export type GalleryItem = {
 };
 
 const galleryFile = (name: string) => `/images/Gallery/${encodeURIComponent(name)}`;
+const moletsiFile = (name: string) => `/images/articles/${encodeURIComponent("lsta meets with Moletji scholar transport associations")}/${encodeURIComponent(name)}`;
 const permitMarchCoverage = "https://www.citizen.co.za/review-online/news-headlines/local-news/2026/03/02/watch-limpopo-scholar-transport-operators-march-over-permits/";
 
 export const galleryItems: GalleryItem[] = [
+  {
+    id: "moletsi-engagement-group-wide",
+    kind: "image",
+    title: "Moletsi scholar transport association representatives",
+    description: "Representatives gathered during LSTA's engagement with five local scholar transport associations on 31 October 2026.",
+    src: moletsiFile("WhatsApp Image 2026-11-01 at 13.03.00.jpeg"),
+    alt: "Group of scholar transport association representatives standing together outside a building in Moletsi",
+  },
+  {
+    id: "moletsi-engagement-meal",
+    kind: "image",
+    title: "Representatives at the Moletsi gathering",
+    description: "Scholar transport association representatives share a meal outdoors during the Moletsi gathering.",
+    src: moletsiFile("WhatsApp Image 2026-11-01 at 13.03.00 (1).jpeg"),
+    alt: "Scholar transport association representatives seated together around an outdoor table",
+  },
+  {
+    id: "moletsi-engagement-group-close",
+    kind: "image",
+    title: "Moletsi association representatives together",
+    description: "A group photograph from LSTA's 31 October 2026 engagement in Greater Moletsi.",
+    src: moletsiFile("WhatsApp Image 2026-11-01 at 13.03.01.jpeg"),
+    alt: "Scholar transport association representatives standing together for a group photograph",
+  },
+  {
+    id: "moletsi-engagement-group-portrait",
+    kind: "image",
+    title: "LSTA engagement in Greater Moletsi",
+    description: "Representatives pose together following the meeting with local scholar transport associations.",
+    src: moletsiFile("WhatsApp Image 2026-11-01 at 13.03.01 (1).jpeg"),
+    alt: "Group of scholar transport association representatives posing outside a building",
+  },
   {
     id: "lsta-group-portrait",
     kind: "image",
